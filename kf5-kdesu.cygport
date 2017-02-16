@@ -1,0 +1,26 @@
+inherit kf5
+
+NAME="kf5-kdesu"
+VERSION=5.27.0
+RELEASE=1
+CATEGORY="Libs"
+SUMMARY="KDE 5 library for querying passwords for console programs"
+DESCRIPTION="KDESU provides functionality for building GUI front ends for
+(password asking) console mode programs. For example, kdesu and
+kdessh use it to interface with su and ssh respectively."
+
+PKG_NAMES="libKF5Su5 libKF5Su-devel"
+libKF5Su5_CONTENTS="
+	usr/bin/cygKF5Su-5.dll
+	usr/libexec/kf5/kdesu*
+	usr/share/doc/
+	usr/share/locale/
+"
+libKF5Su_devel_REQUIRES="libKF5Pty-devel libQt5Core-devel"
+libKF5Su_devel_CONTENTS="
+	usr/include/KF5/KDESu/
+	usr/include/KF5/kdesu_version.h
+	usr/lib/cmake/KF5Su/
+	${QT5_MKSPECSDIR#/}/modules/qt_KDESu.pri
+	usr/lib/libKF5Su.dll.a
+"
